@@ -2,6 +2,7 @@
 title JavaC&E
 set jfile=NO_FILE
 set jrun=NO_FILE
+cd c:\users\owner\desktop
 cls
 
 :main
@@ -23,7 +24,6 @@ goto main
 
 :javacompiler
 cls
-cd c:\users\owner\desktop
 dir *.java
 echo.
 echo To go back to the MainMenu, type: main
@@ -40,3 +40,18 @@ echo If you do not wish to run this file, press 'enter'
 set /p yn=Do you also need to run this code?(y/n):
 
 if NOT %yn%==n goto execute
+goto javacompiler
+
+:execute
+cls
+dir *.class
+echo.
+echo To go back to MainMenu, type main
+echo DO NOT INCLUDE EXTENSION.
+echo
+set /p jrun=Which file would you like to run?:
+
+if %jrun%==main goto main
+java %jrun%
+pause
+goto execute
