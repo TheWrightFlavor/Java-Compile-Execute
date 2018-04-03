@@ -1,3 +1,5 @@
+::This is assuming that you have already changed the path environment to the java compiiler.
+
 @echo off
 title JavaC&E
 set jfile=NO_FILE
@@ -24,7 +26,7 @@ goto main
 
 :javacompiler
 cls
-dir *.java
+dir *.java       ::This only allows .java files to show from the current directory.
 echo.
 echo To go back to the MainMenu, type: main
 echo DO NOT INCLUDE EXTENSION.
